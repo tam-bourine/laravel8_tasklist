@@ -8,9 +8,11 @@
     <div class="text-end mb-3">
         <a href="/tasks/new" class="btn btn-light">タスクの追加</a>
     </div>
-    <ul class="list-group list-group-flush">
+    <div class="list-group list-group-flush">
         @foreach($tasks as $task)
-        <li class="list-group-item">{{$task->name}}</li>
+            <a class="list-group-item" href="/task/{{$task->id}}">
+                {{$task->name}}
+            </a>
         @endforeach
-    </ul>
+    </div>
 </x-task-layout>
